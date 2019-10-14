@@ -1,0 +1,37 @@
+
+<div class="container">
+  <ul class="progressbar">
+      <li class="active">Your DETAILS</li>
+      <li class="active">Verify</li>
+      <li>BUSINESS DETAILS</li>
+</ul>
+<div style="width: 75%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 5%;margin-top: 7%">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    
+      <table>
+        <tr class="form-group">
+          
+          <td>
+            <div for="code">Verification Code:</div>
+            <input type="text"   placeholder="Enter Virification Code" class="form-control" name="code" [(ngModel)]="model.code" #code="ngModel" [ngClass]="{ 'is-invalid': f.submitted && code.invalid }" required >
+            <div *ngIf="f.submitted && code.invalid" class="invalid-feedback">
+              <div *ngIf="code.errors.required">Verification Code is required</div>
+          </div>
+          </td>
+        </tr>
+        
+       
+        <tr>
+          
+          <td class="form-group"><button (click)=redirecttobusiinfo()  class="button1"   style="background-color:skyblue;width: 90%;"><span>Verify Mail</span></button></td>
+          <td class="form-group"><button class="button"   style="background-color:skyblue;width: 100%;margin-left:-10%;"><span>Resend Code</span></button></td>
+        </tr>
+        
+      </table>
+    </form>
+    </div>
+    
+    
+    
+    
+    

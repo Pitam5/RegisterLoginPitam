@@ -1,0 +1,139 @@
+<div class="container">
+  <ul class="progressbar">
+      <li class="active">Your DETAILS</li>
+      <li class="active">Verify</li>
+      <li class="active">BUSINESS DETAILS</li>
+</ul>
+<div style="width: 85%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 3%;margin-top: 7%">
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  
+    <table>
+      <tr class="form-group">
+        
+        <td>
+          <div for="companyName">Company Name:</div>
+          <input type="text"   placeholder="Enter Company Name" class="form-control" name="companyName" [(ngModel)]="model.companyName" #companyName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && companyName.invalid }" required >
+          <div *ngIf="f.submitted && companyName.invalid" class="invalid-feedback">
+            <div *ngIf="companyName.errors.required">Company Name is required</div>
+        </div>
+        </td>
+        
+        <td>
+            <div for="ssn">Business Tax ID/SSN:</div>
+          <input type="number" placeholder="Enter SSN" class="form-control" name="ssn" [(ngModel)]="model.ssn" #ssn="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ssn.invalid }" required >
+          <div *ngIf="f.submitted && ssn.invalid" class="invalid-feedback">
+            <div *ngIf="ssn.errors.required">SSN is required</div>
+        </div>
+        </td>
+      </tr>
+      
+      <tr class="form-group">
+      
+          <td>
+              <div for="streetAddress">Street Address:</div>
+            <input type="text" placeholder=" Enter Street Address" class="form-control" name="streetAddress" [(ngModel)]="model.streetAddress" #streetAddress="ngModel" [ngClass]="{ 'is-invalid': f.submitted && streetAddress.invalid }" required >
+            <div *ngIf="f.submitted && streetAddress.invalid" class="invalid-feedback">
+              <div *ngIf="streetAddress.errors.required">Street Address is required</div>
+          </div>
+          </td>
+        <td>
+          <div>Select Country</div>
+            <select name="country" ngModel style="width: 100%;height:100%">
+                <option value="" disabled>Choose a Country</option>
+                <option *ngFor="let country of countries" [ngValue]="state">
+                  {{ country.name }}
+                </option>
+              </select>
+        </td>
+      </tr>
+      <tr class="form-group">
+        
+          <td>
+              <div>Select State</div>
+              <select name="state" ngModel style="width: 70%;height:100%">
+                  <option value="" disabled>Choose a state</option>
+                  <option *ngFor="let state of states" [ngValue]="state">
+                    {{ state.name }}
+                  </option>
+                </select>
+          </td>
+          
+          <td>
+              <div style="margin-left: -40%;">Select City</div>
+            <select name="city" ngModel style="width: 70%;height:100%;margin-left: -40%;">
+                <option value="" disabled>Choose a City</option>
+                <option *ngFor="let city of cities" [ngValue]="city">
+                  {{ city.name }}
+                </option>
+              </select>
+          </td>
+          <td>
+            <div for="zipCode" style="margin-left: -78%;">ZipCode:</div>
+            <input type="number" style="margin-left: -78%;"   placeholder="Select Zip Code" class="form-control" name="zipCode" [(ngModel)]="model.zipCode" #zipCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && zipCode.invalid }" required >
+            <div *ngIf="f.submitted && zipCode.invalid" class="invalid-feedback">
+              <div *ngIf="zipCode.errors.required">ZipCode is required</div>
+          </div>
+          </td>
+        </tr>
+        <tr class="form-group">
+          <td>
+            <div for="phone">Company Phone</div>
+            <input type="number" pattern="^\d{10}$" placeholder="Enter Phone" class="form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required phone >
+             <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+              <div *ngIf="phone.errors.required">Phone is required</div>
+              <div *ngIf="phone.errors.pattern">Phone must be 10 Digit Number</div>
+          </div>
+          </td>
+          <td>
+            <div for="website">Company Website:</div>
+            <input type="text"   placeholder="Enter Company Website" class="form-control" name="website" [(ngModel)]="model.website" #website="ngModel" [ngClass]="{ 'is-invalid': f.submitted && website.invalid }" required >
+            <div *ngIf="f.submitted && website.invalid" class="invalid-feedback">
+              <div *ngIf="website.errors.required">Company Website is required</div>
+          </div>
+          </td>
+        </tr>
+        <tr class="form-group">
+        
+            
+            <td>
+                <div for="doi">D.O.I.:</div>
+              <input type="date" style="width: 95%;"  class="form-control" name="doi" [(ngModel)]="model.doi" #doi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && doi.invalid }" required >
+              <div *ngIf="f.submitted && doi.invalid" class="invalid-feedback">
+                <div *ngIf="doi.errors.required">D.O.I. is required</div>
+            </div>
+            </td>
+            <td>
+              <div style="margin-left: -10%;">S.O.I.</div>
+              <select name="state" ngModel style="width: 70%;height:100%;margin-left: -10%;">
+                  <option value="" disabled>Choose a state</option>
+                  <option *ngFor="let state of states" [ngValue]="state">
+                    {{ state.name }}
+                  </option>
+                </select>
+          </td>
+          
+          <td>
+              <div style="margin-left: -50%;">S.O.C.</div>
+            <select name="city" ngModel style="width: 70%;height:100%;margin-left: -50%;">
+                <option value="" disabled>Choose a City</option>
+                <option *ngFor="let city of cities" [ngValue]="city">
+                  {{ city.name }}
+                </option>
+              </select>
+          </td>
+          </tr>
+
+      
+      <tr>
+        
+        <td class="form-group"><button (click)=redirecttoauthsiginfo() class="button1"   style="background-color:skyblue;margin-left: 90%;"><span>Next</span></button></td>
+      </tr>
+      
+    </table>
+  </form>
+  </div>
+  
+  
+  
+  
+  

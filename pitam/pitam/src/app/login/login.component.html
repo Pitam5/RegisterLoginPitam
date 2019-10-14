@@ -1,0 +1,41 @@
+<div style="width: 35%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 36%;margin-top: 7%">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    
+      <table>
+        <tr class="form-group">
+          
+            <td>
+            <div for="email">Email(User Name):</div>
+          <input type="text" placeholder="Enter Email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email >
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+        </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <div for="password">Password:</div>
+                <input type="password"   placeholder="Enter Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required >
+                <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                  <div *ngIf="password.errors.required">password is required</div>
+              </div>
+              </td>
+
+        </tr>
+        
+       
+        <tr>
+          
+          <td class="form-group"><button (click)=onSubmit() class="button1"   style="background-color:skyblue;width: 110%;"><span>LogIn</span></button></td>
+          <td><a routerLink="/registration">Register</a></td>
+        </tr>
+        
+      </table>
+    </form>
+    </div>
+    
+    
+    
+    
+    
