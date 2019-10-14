@@ -1,5 +1,11 @@
-<div style="width: 35%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 36%;margin-top: 7%">
-  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+<div class="container1">
+  <ul class="progressbar">
+      <li class="active">Your DETAILS</li>
+      <li>Verify</li>
+      <li>BUSINESS DETAILS</li>
+</ul>
+<div style="width: 80%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 6%;margin-top: 7%">
+  <form name="form" (ngSubmit)="f.form.valid && redirecttoverify()" #f="ngForm"  novalidate>
   
     <table>
       <tr class="form-group">
@@ -43,9 +49,11 @@
         
           <td>
             <div for="password">Password:</div>
-            <input type="password"   placeholder="Enter Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required >
+            <input type="password"   placeholder="Enter Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" >
             <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
               <div *ngIf="password.errors.required">password is required</div>
+              <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+
           </div>
           </td>
           
@@ -59,7 +67,7 @@
         </tr>
       
       <tr>
-        <td class="form-group"><button (click)=onsubmit() class="button"   style="background-color:skyblue;"><span>Submit</span></button></td>
+        <td class="form-group"><button  class="button"   style="background-color:skyblue;"><span>Submit</span></button></td>
       </tr>
       
     </table>

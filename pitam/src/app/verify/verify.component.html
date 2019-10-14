@@ -1,5 +1,12 @@
-<div style="width: 35%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 36%;margin-top: 7%">
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+<div class="container">
+  <ul class="progressbar">
+      <li class="active">Your DETAILS</li>
+      <li class="active">Verify</li>
+      <li>BUSINESS DETAILS</li>
+</ul>
+<div style="width: 75%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 5%;margin-top: 7%">
+    <form name="form" (ngSubmit)="f.form.valid && redirecttobusiinfo()" #f="ngForm" novalidate>
     
       <table>
         <tr class="form-group">
@@ -16,8 +23,8 @@
        
         <tr>
           
-          <td class="form-group"><button (click)=onSubmit() class="button1"   style="background-color:skyblue;width: 110%;"><span>Verify Mail</span></button></td>
-          <td class="form-group"><button class="button"   style="background-color:skyblue;width: 120%;margin-left:-20%;"><span>Resend Code</span></button></td>
+          <td class="form-group"><button   class="button1"   style="background-color:skyblue;width: 90%;"><span>Verify Mail</span></button></td>
+          <td class="form-group"><button class="button"   style="background-color:skyblue;width: 100%;margin-left:-10%;"><span>Resend Code</span></button></td>
         </tr>
         
       </table>

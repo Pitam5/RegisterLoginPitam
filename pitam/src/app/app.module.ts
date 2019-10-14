@@ -12,6 +12,7 @@ import { AuthSigInfoComponent } from './auth-sig-info/auth-sig-info.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     AuthSigInfoComponent,
     WelcomeComponent,
     LoginComponent
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,

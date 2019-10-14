@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-busi-info',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusiInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
   countries = [
     {name: 'USA'},
     {name: 'England'},
@@ -24,8 +25,9 @@ export class BusiInfoComponent implements OnInit {
     {name: 'Durgapur'}
   ];
   model: any = {};
-  onSubmit() {
+  redirecttoauthsiginfo() {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
+    this.router.navigate(['authsiginfo'])
   }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-verify',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private roter : Router) { }
   model: any = {};
-  onSubmit() {
+  redirecttobusiinfo() {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
+    this.roter.navigate(['busiinfo'])
   }
   ngOnInit() {
   }

@@ -1,5 +1,11 @@
-<div style="width: 35%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 36%;margin-top: 7%">
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+<div class="container">
+  <ul class="progressbar">
+      <li class="active">Your DETAILS</li>
+      <li class="active">Verify</li>
+      <li class="active">BUSINESS DETAILS</li>
+</ul>
+<div style="width: 85%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 3%;margin-top: 7%">
+    <form name="form" (ngSubmit)="f.form.valid && redirecttowelcome()" #f="ngForm" novalidate>
     
       <table>
         <tr class="form-group">
@@ -82,8 +88,8 @@
             </tr>
         
         <tr>
-          <td class="form-group"><button class="button"   style="background-color:skyblue;"><span>Back</span></button></td>
-          <td class="form-group"><button (click)=onSubmit() class="button1"   style="background-color:skyblue;"><span>Next</span></button></td>
+          <td class="form-group"><button class="button" (click)=redirecttobusiinfo()   style="background-color:skyblue;"><span>Back</span></button></td>
+          <td class="form-group"><button   class="button1"   style="background-color:skyblue;"><span>Next</span></button></td>
         </tr>
         
       </table>

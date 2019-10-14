@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router : Router) { }
 
   model: any = {};
-  onSubmit() {
+  redirecttoverify() {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
+    this.router.navigate(['verify']);
+    
+
   }
   ngOnInit() {
   }
