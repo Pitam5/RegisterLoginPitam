@@ -1,0 +1,72 @@
+<div style="width: 35%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 36%;margin-top: 7%">
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  
+    <table>
+      <tr class="form-group">
+        
+        <td>
+          <div for="firstName">First Name:</div>
+          <input type="text"   placeholder="Enter First Name" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required >
+          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+        </div>
+        </td>
+        
+        <td>
+            <div for="lastName">Last Name:</div>
+          <input type="text" placeholder="Enter Last Name" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required >
+          <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+            <div *ngIf="lastName.errors.required">Last Name is required</div>
+        </div>
+        </td>
+      </tr>
+      
+      <tr class="form-group">
+      
+        <td>
+            <div for="email">Company Email(User Name):</div>
+          <input type="text" placeholder="Enter Email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email >
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+        </td>
+        <td>
+            <div for="companyName">Company Name:</div>
+          <input type="text" placeholder="Enter Company Name" class="form-control" name="companyName" [(ngModel)]="model.companyName" #companyName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && companyName.invalid }" required >
+          <div *ngIf="f.submitted && companyName.invalid" class="invalid-feedback">
+            <div *ngIf="companyName.errors.required">Company Name is required</div>
+        </div>
+        </td>
+      </tr>
+      <tr class="form-group">
+        
+          <td>
+            <div for="password">Password:</div>
+            <input type="password"   placeholder="Enter Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required >
+            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+              <div *ngIf="password.errors.required">password is required</div>
+          </div>
+          </td>
+          
+          <td>
+              <div for="confPassword">Confirm Password:</div>
+            <input type="password" placeholder="Re-Enter Password" class="form-control" name="confPassword" [(ngModel)]="model.confPassword" #confPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.confPassword }" required >
+            <div *ngIf="f.submitted && confPassword.invalid" class="invalid-feedback">
+              <div *ngIf="confPassword.errors.required">password is required</div>
+          </div>
+          </td>
+        </tr>
+      
+      <tr>
+        <td class="form-group"><button (click)=onsubmit() class="button"   style="background-color:skyblue;"><span>Submit</span></button></td>
+      </tr>
+      
+    </table>
+  </form>
+  </div>
+  
+  
+  
+  
+  

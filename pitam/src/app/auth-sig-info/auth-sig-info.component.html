@@ -1,0 +1,96 @@
+<div style="width: 35%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: 36%;margin-top: 7%">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    
+      <table>
+        <tr class="form-group">
+          
+          <td>
+            <div for="firstName">First Name:</div>
+            <input type="text"   placeholder="Enter First Name" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required >
+            <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+              <div *ngIf="firstName.errors.required">First Name is required</div>
+          </div>
+          </td>
+          
+          <td>
+              <div for="lastName">Last Name:</div>
+            <input type="text" placeholder="Enter Last Name" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required >
+            <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+              <div *ngIf="lastName.errors.required">Last Name is required</div>
+          </div>
+          </td>
+        </tr>
+        
+        <tr class="form-group">
+        
+            <td>
+                <div for="streetAddress">Street Address:</div>
+              <input type="text" placeholder=" Enter Street Address" class="form-control" name="streetAddress" [(ngModel)]="model.streetAddress" #streetAddress="ngModel" [ngClass]="{ 'is-invalid': f.submitted && streetAddress.invalid }" required >
+              <div *ngIf="f.submitted && streetAddress.invalid" class="invalid-feedback">
+                <div *ngIf="streetAddress.errors.required">Street Address is required</div>
+            </div>
+            </td>
+          <td>
+            <div>Select Country</div>
+              <select name="country" ngModel style="width: 100%;height:100%">
+                  <option value="" disabled>Choose a Country</option>
+                  <option *ngFor="let country of countries" [ngValue]="state">
+                    {{ country.name }}
+                  </option>
+                </select>
+          </td>
+        </tr>
+        <tr class="form-group">
+          
+            <td>
+                <div>Select State</div>
+                <select name="state" ngModel style="width: 100%;height:100%">
+                    <option value="" disabled>Choose a state</option>
+                    <option *ngFor="let state of states" [ngValue]="state">
+                      {{ state.name }}
+                    </option>
+                  </select>
+            </td>
+            
+            <td>
+                <div>Select City</div>
+              <select name="city" ngModel style="width: 100%;height:100%">
+                  <option value="" disabled>Choose a City</option>
+                  <option *ngFor="let city of cities" [ngValue]="city">
+                    {{ city.name }}
+                  </option>
+                </select>
+            </td>
+          </tr>
+          <tr class="form-group">
+          
+              <td>
+                <div for="zipCode">ZipCode:</div>
+                <input type="text"   placeholder="Select Zip Code" class="form-control" name="zipCode" [(ngModel)]="model.zipCode" #zipCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && zipCode.invalid }" required >
+                <div *ngIf="f.submitted && zipCode.invalid" class="invalid-feedback">
+                  <div *ngIf="zipCode.errors.required">ZipCode is required</div>
+              </div>
+              </td>
+              
+              <td>
+                  <div for="dob">D.O.B.:</div>
+                <input type="date" style="width: 95%"  class="form-control" name="dob" [(ngModel)]="model.dob" #dob="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dob.invalid }" required >
+                <div *ngIf="f.submitted && dob.invalid" class="invalid-feedback">
+                  <div *ngIf="dob.errors.required">D.O.B. is required</div>
+              </div>
+              </td>
+            </tr>
+        
+        <tr>
+          <td class="form-group"><button class="button"   style="background-color:skyblue;"><span>Back</span></button></td>
+          <td class="form-group"><button (click)=onSubmit() class="button1"   style="background-color:skyblue;"><span>Next</span></button></td>
+        </tr>
+        
+      </table>
+    </form>
+    </div>
+    
+    
+    
+    
+    
