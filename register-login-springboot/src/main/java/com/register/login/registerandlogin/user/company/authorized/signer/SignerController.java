@@ -1,7 +1,10 @@
 package com.register.login.registerandlogin.user.company.authorized.signer;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +20,20 @@ public class SignerController {
 	
 	@Autowired
 	private CompanyRepository companyRepository;
+	
+	@GetMapping("company/{id}/signer")
+	public AuthorizedSigner retrieveOne(@PathVariable int id) {
+		
+		List<AuthorizedSigner> signers = new ArrayList<>();
+		signers = signerRepository.findAll();
+		
+		for(AuthorizedSigner signer: signers)
+			if(signer.getCompany().getId()==id)
+				return signer;
+		
+		return null;
+		
+	}
 	
 	@PostMapping("/company/{id}/signer")
 	public void createCompany(@PathVariable int id, @RequestBody AuthorizedSigner signer) {

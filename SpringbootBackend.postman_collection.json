@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "66bd31ea-60fc-4a02-a8c7-c8d7b1301424",
+		"name": "SpringbootBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/user=pitam.mondal@xyz.in&pw=54321",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\": \"Pitam2\",\r\n    \"ssn\": 123,\r\n    \"address\": \"Garia\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700084,\r\n    \"phone\": 1234567890,\r\n    \"website\": \"www.xyz.com\",\r\n    \"dateOfIncorporation\": \"1994-10-11T18:30:00.000+0000\",\r\n    \"stateOfIncorporation\": \"West Bengal\",\r\n    \"cityOfIncorporation\": \"Kolkata\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user=pitam.mondal@xyz.in&pw=54321",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user=pitam.mondal@xyz.in&pw=54321"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users/1/company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\": \"Pitam2\",\r\n    \"ssn\": 123,\r\n    \"address\": \"Garia\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700084,\r\n    \"phone\": 1234567890,\r\n    \"website\": \"www.xyz.com\",\r\n    \"dateOfIncorporation\": \"1994-10-11T18:30:00.000+0000\",\r\n    \"stateOfIncorporation\": \"West Bengal\",\r\n    \"cityOfIncorporation\": \"Kolkata\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/1/company",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/company/1/signer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Arijit2\",\r\n    \"lastName\": \"Das\",\r\n    \"address\": \"Garia\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700084,\r\n    \"dateOfBirth\": \"1994-04-04T18:30:00.000+0000\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/company/1/signer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"company",
+						"1",
+						"signer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/company/1/signer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Arijit2\",\r\n    \"lastName\": \"Das\",\r\n    \"address\": \"Garia\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700084,\r\n    \"dateOfBirth\": \"1994-04-04T18:30:00.000+0000\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/company/1/signer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"company",
+						"1",
+						"signer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/company/1/signer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pitam2\",\r\n    \"ssn\": 123,\r\n    \"address\": \"Garia\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700084,\r\n    \"phone\": 1234567890,\r\n    \"website\": \"www.xyz2.com\",\r\n    \"dateOfIncorporation\": \"1990-11-11T18:30:00.000+0000\",\r\n    \"stateOfIncorporation\": \"West Bengal\",\r\n    \"cityOfIncorporation\": \"Kolkata\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/company/1/signer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"company",
+						"1",
+						"signer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users/1/companies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pitam2\",\r\n    \"ssn\": 123,\r\n    \"address\": \"Garia\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700084,\r\n    \"phone\": 1234567890,\r\n    \"website\": \"www.xyz2.com\",\r\n    \"dateOfIncorporation\": \"1990-11-11T18:30:00.000+0000\",\r\n    \"stateOfIncorporation\": \"West Bengal\",\r\n    \"cityOfIncorporation\": \"Kolkata\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/1/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users/1/companies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2,\r\n        \"firstName\": \"Pitam2\",\r\n        \"lastName\": \"Mondal\",\r\n        \"companyEmail\": \"pitam2.mondal@xyz.in\",\r\n        \"companyName\": \"XYZ2 Ltd\",\r\n        \"password\": \"543210\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/1/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2,\r\n        \"firstName\": \"Pitam2\",\r\n        \"lastName\": \"Mondal\",\r\n        \"companyEmail\": \"pitam2.mondal@xyz.in\",\r\n        \"companyName\": \"XYZ2 Ltd\",\r\n        \"password\": \"543210\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"XYZ Ltd\",\r\n    \"ssn\": 123,\r\n    \"address\": \"P.Street\",\r\n    \"country\": \"India\",\r\n    \"state\": \"West Bengal\",\r\n    \"city\": \"Kolkata\",\r\n    \"zipCode\": 700014,\r\n    \"phone\": 1234567890,\r\n    \"website\": \"www.xyz.com\",\r\n    \"dateOfIncorporation\": \"1995-10-11T18:30:00.000+0000\",\r\n    \"stateOfIncorporation\": \"West Bengal\",\r\n    \"cityOfIncorporation\": \"Kolkata\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

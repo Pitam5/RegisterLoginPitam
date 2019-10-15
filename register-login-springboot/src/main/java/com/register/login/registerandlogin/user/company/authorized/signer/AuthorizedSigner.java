@@ -56,6 +56,8 @@ public class AuthorizedSigner {
 	@OneToOne
 	private Company company;
 
+    public AuthorizedSigner() {}
+	
 	public AuthorizedSigner(Integer id, 
 			@NotNull @Size(min = 1, message = "First Name is required") String firstName,
 			@NotNull @Size(min = 1, message = "Last Name is required") String lastName,

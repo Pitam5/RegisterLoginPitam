@@ -26,7 +26,7 @@ public class Company {
 	private String name;
 	
 	@NotNull
-	//@Size(min=1, message="SSN is required")
+	@Size(min=1, message="SSN is required")
 	private Integer ssn;
 	
 	@NotNull
@@ -46,11 +46,11 @@ public class Company {
 	private String city;
 	
 	@NotNull
-	//@Size(min=6, max=6, message="Zip Code is required")
+	@Size(min=6, max=6, message="Zip Code is required")
 	private Long zipCode;
 	
 	@NotNull
-	//@Size(min=10, max=10, message="Phone no. is required")
+	@Size(min=10, max=10, message="Phone no. is required")
 	private Long phone;
 	
 	@NotNull
@@ -58,7 +58,7 @@ public class Company {
 	private String website;
 	
 	@NotNull
-	//@Size(min=1, message="Date of Incorporation is required")
+	@Size(min=1, message="Date of Incorporation is required")
 	private Date dateOfIncorporation;
 	
 	@NotNull
