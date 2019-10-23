@@ -13,46 +13,56 @@ import javax.validation.constraints.Size;
 
 import com.register.login.registerandlogin.user.company.Company;
 
+//Maps to authorized_signer table
 @Entity
 @Table(name = "authorized_signer")
 public class AuthorizedSigner {
 	
+	//Mapped to id field of authorized_signer table
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	//Mapped to firstname field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="First Name is required")
 	private String firstName;
 	
+	//Mapped to lastname field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="Last Name is required")
 	private String lastName;
 	
+	//Mapped to address field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="Address is required")
 	private String address;
 	
+	//Mapped to country field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="Country is required")
 	private String country;
 	
+	//Mapped to state field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="State is required")
 	private String state;
 	
+	//Mapped to city field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="City is required")
 	private String city;
 	
+	//Mapped to zipcode field of authorized_signer table
 	@NotNull
 	@Size(min=6, max=6, message="Zip Code is required")
 	private Long zipCode;
 	
+	//Mapped to dateofbirth field of authorized_signer table
 	@NotNull
 	@Size(min=1, message="Date of Birth is required")
 	private Date dateOfBirth;
-	
+	//Mapped to Company in one to one relation
 	@OneToOne
 	private Company company;
 
