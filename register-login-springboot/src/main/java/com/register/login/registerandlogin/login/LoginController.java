@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.register.login.registerandlogin.user.User;
 import com.register.login.registerandlogin.user.UserRepository;
 
+//Controls Login Functionality
 @RestController
 public class LoginController {
 	
 	@Autowired
 	private UserRepository userRepository;
-	
+	//Returns User details based on username and password
 	@GetMapping("/user={username}&pw={password}")
 	public User retrieveUser(@PathVariable String username, @PathVariable String password) {
 		
