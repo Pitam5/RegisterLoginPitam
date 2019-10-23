@@ -8,30 +8,37 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+//Mapped to User Table
 @Entity
 @Table(name = "User")
 public class User {
 	
+	//Mapped to id field of user table
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	//Mapped to firstname field of user table
 	@NotNull
 	@Size(min=1, message="First Name is required")
 	private String firstName;
 	
+	//Mapped to lastname field of user table
 	@NotNull
 	@Size(min=1, message="Last Name is required")
 	private String lastName;
 	
+	//Mapped to company email field of user table
 	@NotNull
 	@Size(min=1, message="Company Email is required")
 	private String companyEmail;
 	
+	//Mapped to company name field of user table
 	@NotNull
 	@Size(min=1, message="Company Name is required")
 	private String companyName;
 	
+	//Mapped to password field of user table
 	@NotNull
 	@Size(min=1, message="Password is required")
 	private String password;
