@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.register.login.registerandlogin.user.User;
 import com.register.login.registerandlogin.user.UserRepository;
 
+//Controls Company details
 @RestController
 public class CompanyController {
 	
@@ -21,6 +22,7 @@ public class CompanyController {
 	@Autowired
 	UserRepository userRepository;
 	
+	//Returns Company details based on User id
 	@GetMapping("users/{id}/companies")
 	public Company retrieveOne(@PathVariable int id) {
 		
@@ -35,6 +37,7 @@ public class CompanyController {
 		
 	}
 	
+	//Posts company details based on user id
 	@PostMapping("/users/{id}/company")
 	public void createCompany(@PathVariable int id, @RequestBody Company company) {
 		
