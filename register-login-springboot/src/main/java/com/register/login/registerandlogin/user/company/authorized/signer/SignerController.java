@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.register.login.registerandlogin.user.company.Company;
 import com.register.login.registerandlogin.user.company.CompanyRepository;
 
+//Controls authorized signer details
 @RestController
 public class SignerController {
 	
@@ -21,6 +22,7 @@ public class SignerController {
 	@Autowired
 	private CompanyRepository companyRepository;
 	
+	//Returns authorized signer details based on company id
 	@GetMapping("company/{id}/signer")
 	public AuthorizedSigner retrieveOne(@PathVariable int id) {
 		
@@ -35,6 +37,7 @@ public class SignerController {
 		
 	}
 	
+	//Posts authorized signer details based on company id
 	@PostMapping("/company/{id}/signer")
 	public void createCompany(@PathVariable int id, @RequestBody AuthorizedSigner signer) {
 		
