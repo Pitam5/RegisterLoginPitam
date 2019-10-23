@@ -13,62 +13,77 @@ import javax.validation.constraints.Size;
 
 import com.register.login.registerandlogin.user.User;
 
+//Mapped to Company table
 @Entity
 @Table(name = "Company")
 public class Company {
 	
+	//Mapped to id field of Company table
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	//Mapped to name field of Company table
 	@NotNull
 	@Size(min=1, message="Company Name is required")
 	private String name;
 	
+	//Mapped to ssn field of Company table
 	@NotNull
 	@Size(min=1, message="SSN is required")
 	private Integer ssn;
 	
+	//Mapped to address field of Company table
 	@NotNull
 	@Size(min=1, message="Company Address is required")
 	private String address;
 	
+	//Mapped to country field of Company table
 	@NotNull
 	@Size(min=1, message="Country is required")
 	private String country;
 	
+	//Mapped to state field of Company table
 	@NotNull
 	@Size(min=1, message="State is required")
 	private String state;
 	
+	//Mapped to city field of Company table
 	@NotNull
 	@Size(min=1, message="City is required")
 	private String city;
 	
+	//Mapped to zipcode field of Company table
 	@NotNull
 	@Size(min=6, max=6, message="Zip Code is required")
 	private Long zipCode;
 	
+	//Mapped to phone field of Company table
 	@NotNull
 	@Size(min=10, max=10, message="Phone no. is required")
 	private Long phone;
 	
+	//Mapped to website field of Company table
 	@NotNull
 	@Size(min=1, message="Website is required")
 	private String website;
 	
+	//Mapped to date field of Company table
 	@NotNull
 	@Size(min=1, message="Date of Incorporation is required")
 	private Date dateOfIncorporation;
 	
+	//Mapped to stateofincorporation field of Company table
 	@NotNull
 	@Size(min=1, message="State of Incorporation is required")
 	private String stateOfIncorporation;
 	
+	//Mapped to cityofincorporation field of Company table
 	@NotNull
 	@Size(min=1, message="City of Incorporation is required")
 	private String cityOfIncorporation;
 	
+	//Mapped with User table in one to one relation
 	@OneToOne
 	private User user;
 
