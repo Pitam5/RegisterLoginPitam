@@ -83,7 +83,7 @@ public class Company {
 	@Size(min=1, message="City of Incorporation is required")
 	private String cityOfIncorporation;
 	
-	//Mapped with User table in one to one relation
+	//Mapped with User in one to one relation
 	@OneToOne
 	private User user;
 
